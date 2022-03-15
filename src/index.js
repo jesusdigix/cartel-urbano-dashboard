@@ -15,6 +15,7 @@ import Default from './components/dashboard/defaultCompo/default';
 import Ecommerce from './components/dashboard/ecommerce';
 import University from './components/dashboard/university';
 import Server from './components/dashboard/server/serverComponent';
+import TaskApp from './components/applications/task-app/taskApp';
 // import ServerComponent from './components/dashboard/server/server-component';
 import Project from './components/dashboard/project/project';
 
@@ -54,6 +55,7 @@ const Root = () => {
                                     <Route path={`${process.env.PUBLIC_URL}/dashboard/university`} component={University} />
                                     <Route path={`${process.env.PUBLIC_URL}/dashboard/server`} component={Server} />
                                     <Route path={`${process.env.PUBLIC_URL}/dashboard/project`} component={Project} />
+                                    <Route path={`${process.env.PUBLIC_URL}/dashboard/events`} component={TaskApp} />
 
                                     {/* Support Ticket */}
                                     <Route path={`${process.env.PUBLIC_URL}/support-ticket/supportTicket`} component={SupportTicket} />

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import logo from '../../../assets/images/endless-logo.png';
+import logo from '../../../assets/images/logo-cartel.png';
 import logo_compact from '../../../assets/images/logo/compact-logo.png';
 import UserPanel from './userPanel';
 import { MENUITEMS } from '../../../components/common/sidebar-component/menu';
@@ -169,12 +169,12 @@ const Sidebar = (props) => {
     return (
         <Fragment>
             <div className="page-sidebar">
-                <div className="main-header-left d-none d-lg-block">
+                <div className="main-header-left d-none d-lg-block" style={{backgroundColor: "black"}}>
                     <div className="logo-wrapper">
                         <div className="compactLogo">
                             <Link to={`${process.env.PUBLIC_URL}/dashboard/default`}>
                                 <img className="blur-up lazyloaded" src={logo_compact} alt="" />
-                                <img className="blur-up lazyloaded" src={logo} alt="" />
+                                <img className="blur-up lazyloaded w-full w-100" src={logo} alt="" />
                             </Link>
                         </div>
                     </div>

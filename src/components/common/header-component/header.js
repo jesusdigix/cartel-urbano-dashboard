@@ -1,5 +1,5 @@
 import React, { useState ,Fragment } from 'react';
-import logo from '../../../assets/images/endless-logo.png';
+import logo from '../../../assets/images/icon-logo.svg';
 import Language from './language';
 import UserMenu from './userMenu';
 import Notification from './notification';
@@ -58,12 +58,11 @@ const Header = () => {
 
   return (
     <Fragment>
-      <div className="page-main-header" >
-        <div className="main-header-right row">
+      <div className="page-main-header">
+        <div className="main-header-right row" style={{backgroundColor: "black"}}>
           <div className="main-header-left d-lg-none col-auto">
             <div className="logo-wrapper">
               <Link to={`${process.env.PUBLIC_URL}/dashboard/default`}>
-                <img className="img-fluid" src={logo} alt="" />
               </Link>
             </div>
           </div>

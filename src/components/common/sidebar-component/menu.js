@@ -2,17 +2,22 @@ import {
     Anchor,
     Headphones,
     Home,
-    
+
 } from 'react-feather';
 
 export const MENUITEMS = [
     {
-        title: 'Dashboard', icon: Home, type: 'sub', badgeType: 'primary', active: false, children: [
+        title: 'Dashboard', 
+        icon: Home, 
+        type: 'sub', 
+        badgeType: 'primary', 
+        active: false, 
+        children: [
             { path: '/dashboard/default', title: 'Default', type: 'link' },
-            { path: '/dashboard/ecommerce', title: 'E-Commerce', type: 'link' },
-            { path: '/dashboard/university', title: 'University', type: 'link' },
-            { path: '/dashboard/server', title: 'Server', type: 'link' },
-            { path: '/dashboard/project', title: 'Project', type: 'link' }
+            { path: '/dashboard/events', title: 'Eventos', type: 'link' },
+            //{ path: '/dashboard/university', title: 'University', type: 'link' },
+            //{ path: '/dashboard/server', title: 'Server', type: 'link' },
+            //{ path: '/dashboard/project', title: 'Project', type: 'link' }
         ]
     },
     {

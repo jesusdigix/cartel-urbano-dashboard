@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
 import comingsoon from '../assets/images/other-images/coming-soon-bg.jpg';
 import authVideo from '../assets/video/auth-bg.mp4';
-import logo from '../assets/images/endless-logo.png';
+import logo from '../assets/images/icon-cartel.svg';
 import { Login,LOGIN,YourName,Password,RememberMe } from '../constant';
+import { Link } from 'react-router-dom';
+
 const LoginWithVideo = () => {
     return (
         <Fragment>
@@ -19,7 +21,7 @@ const LoginWithVideo = () => {
                                 <div className="card-body">
                                     <div className="text-center">
                                         <h4>{LOGIN}</h4>
-                                        <h6>{"Enter your Username and Password"} </h6>
+                                        <h6>{"Ingrese su nombre de usuario y contraseña"} </h6>
                                     </div>
                                     <form className="theme-form">
                                         <div className="form-group">
@@ -35,16 +37,7 @@ const LoginWithVideo = () => {
                                             <label htmlFor="checkbox1">{RememberMe}</label>
                                         </div>
                                         <div className="form-group form-row mt-3 mb-0 d-grid">
-                                            <button className="btn btn-primary" type="submit">{Login}</button>
-                                        </div>
-                                        <div className="login-divider"></div>
-                                        <div className="social mt-3">
-                                            <div className="form-group btn-showcase d-flex">
-                                                <button className="btn social-btn btn-fb d-inline-block"> <i className="fa fa-facebook"></i></button>
-                                                <button className="btn social-btn btn-twitter d-inline-block"><i className="fa fa-google"></i></button>
-                                                <button className="btn social-btn btn-google d-inline-block"><i className="fa fa-twitter"></i></button>
-                                                <button className="btn social-btn btn-github d-inline-block"><i className="fa fa-github"></i></button>
-                                            </div>
+                                            <Link to={"/dashboard/events"} className="btn btn-primary" >{Login}</Link>
                                         </div>
                                     </form>
                                 </div>

@@ -1,33 +1,32 @@
 import {
-    Anchor,
-    Headphones,
     Home,
-
+    Calendar,
+    Gift
 } from 'react-feather';
 
 export const MENUITEMS = [
     {
-        title: 'Dashboard', 
+        title: 'Home', 
         icon: Home, 
-        type: 'sub', 
+        type: 'link', 
         badgeType: 'primary', 
-        active: false, 
-        children: [
-            { path: '/dashboard/default', title: 'Default', type: 'link' },
-            { path: '/dashboard/events', title: 'Eventos', type: 'link' },
-            //{ path: '/dashboard/university', title: 'University', type: 'link' },
-            //{ path: '/dashboard/server', title: 'Server', type: 'link' },
-            //{ path: '/dashboard/project', title: 'Project', type: 'link' }
-        ]
+        active: true, 
+        path: '/dashboard'
     },
     {
-        title: 'Support Ticket', icon: Anchor, type: 'link', path: '/support-ticket/supportTicket', active: false
+        title: 'Eventos', 
+        icon: Calendar, 
+        type: 'link', 
+        badgeType: 'primary', 
+        active: true, 
+        path: '/dashboard/events'
     },
     {
-        path: 'http://support.pixelstrap.com/help-center',
-        title: 'Raise Support',
-        icon: Headphones,
-        type: 'exteral_link',
-        active: false
+        title: 'Productos', 
+        icon: Gift, 
+        type: 'link', 
+        badgeType: 'primary', 
+        active: true, 
+        path: '/dashboard/events'
     },
 ]

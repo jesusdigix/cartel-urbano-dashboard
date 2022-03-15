@@ -37,6 +37,7 @@
     "react-chartjs-2": "^4.0.0",
     "react-ckeditor-component": "^1.1.0",
     "react-clock": "^3.0.0",
+    "react-color": "^2.19.3",
     "react-copy-to-clipboard": "^5.0.4",
     "react-countdown": "^2.3.2",
     "react-countup": "^6.1.0",

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import './i18n';
-import { BrowserRouter, Switch, Route,Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 // ** Import custom components for redux **
@@ -15,9 +15,13 @@ import Default from './components/dashboard/defaultCompo/default';
 import Ecommerce from './components/dashboard/ecommerce';
 import University from './components/dashboard/university';
 import Server from './components/dashboard/server/serverComponent';
-import TaskApp from './components/applications/task-app/taskApp';
+import EventsApp from './components/applications/events-app/eventsApp';
+import CategoriesApp from './components/applications/categories-app/categoriesApp';
 // import ServerComponent from './components/dashboard/server/server-component';
 import Project from './components/dashboard/project/project';
+// Pages
+import loginWithVideo from './pages/loginWithVideo';
+
 
 import SupportTicket from './components/support-ticket/supportTicket';
 
@@ -33,7 +37,7 @@ const Root = () => {
         document.body.classList.add(layout);
         console.ignoredYellowBox = ['Warning: Each', 'Warning: Failed'];
         console.disableYellowBox = true;
-        document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/${color}.css`);
+        document.getElementById("color").setAttribute("href", `/assets/css/${color}.css`);
 
         return function cleanup() {
             abortController.abort();
@@ -44,23 +48,21 @@ const Root = () => {
         <div className="App">
             <Provider store={store}>
                 <BrowserRouter basename={`/`}>
-                        <Switch>
-                                <App>
-                                    {/* dashboard menu */}
-                                    <Route exact path={`${process.env.PUBLIC_URL}/`} render={() => {
-                                        return (<Redirect to={`${process.env.PUBLIC_URL}/dashboard/default`} />)
-                                    }} />
-                                    <Route path={`${process.env.PUBLIC_URL}/dashboard/default`} component={Default} />
-                                    <Route path={`${process.env.PUBLIC_URL}/dashboard/ecommerce`} component={Ecommerce} />
-                                    <Route path={`${process.env.PUBLIC_URL}/dashboard/university`} component={University} />
-                                    <Route path={`${process.env.PUBLIC_URL}/dashboard/server`} component={Server} />
-                                    <Route path={`${process.env.PUBLIC_URL}/dashboard/project`} component={Project} />
-                                    <Route path={`${process.env.PUBLIC_URL}/dashboard/events`} component={TaskApp} />
+                    <Switch>
+                        <Route exact path={`/`} render={() => {
+                            return (<Redirect to={`/login`} />)
+                        }} />
+                        <Route path={`/login`} component={loginWithVideo} />
+                        <App>
+                            {/* dashboard menu */}
+                            <Route path={`/dashboard`} component={Default} exact />
+                            <Route path={`/dashboard/events`} component={EventsApp} />
+                            <Route path={`/dashboard/categories`} component={CategoriesApp} />
 
-                                    {/* Support Ticket */}
-                                    <Route path={`${process.env.PUBLIC_URL}/support-ticket/supportTicket`} component={SupportTicket} />
-                                </App>
-                        </Switch>
+                            {/* Support Ticket */}
+                            <Route path={`/support-ticket/supportTicket`} component={SupportTicket} />
+                        </App>
+                    </Switch>
                 </BrowserRouter>
             </Provider>
         </div>

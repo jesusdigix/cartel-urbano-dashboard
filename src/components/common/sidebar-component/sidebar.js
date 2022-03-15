@@ -172,7 +172,7 @@ const Sidebar = (props) => {
                 <div className="main-header-left d-none d-lg-block" style={{backgroundColor: "black"}}>
                     <div className="logo-wrapper">
                         <div className="compactLogo">
-                            <Link to={`${process.env.PUBLIC_URL}/dashboard/default`}>
+                            <Link to={`/dashboard`}>
                                 <img className="blur-up lazyloaded" src={logo_compact} alt="" />
                                 <img className="blur-up lazyloaded w-full w-100" src={logo} alt="" />
                             </Link>
@@ -204,7 +204,7 @@ const Sidebar = (props) => {
                                         : ''}
                                     {(menuItem.type === 'link') ?
                                         <Link
-                                            to={`${process.env.PUBLIC_URL}${menuItem.path}`}
+                                            to={`${menuItem.path}`}
                                             className={`sidebar-header ${menuItem.active ? 'active' : ''}`}
 
                                             onClick={() => toggletNavActive(menuItem)}
@@ -228,7 +228,7 @@ const Sidebar = (props) => {
 
                                                     {(childrenItem.type === 'link') ?
                                                         <Link
-                                                            to={`${process.env.PUBLIC_URL}${childrenItem.path}`}
+                                                            to={`${childrenItem.path}`}
                                                             className={childrenItem.active ? 'active' : ''}
                                                             onClick={() => toggletNavActive(childrenItem)}
                                                         >
@@ -240,7 +240,7 @@ const Sidebar = (props) => {
                                                                 <li className={childrenSubItem.active ? 'active' : ''} key={key}>
                                                                     {(childrenSubItem.type === 'link') ?
                                                                         <Link
-                                                                            to={`${process.env.PUBLIC_URL}${childrenSubItem.path}`}
+                                                                            to={`${childrenSubItem.path}`}
                                                                             className={childrenSubItem.active ? 'active' : ''}
                                                                             onClick={() => toggletNavActive(childrenSubItem)}
                                                                         >

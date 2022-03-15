@@ -1,4 +1,4 @@
-import React, { useState ,Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import logo from '../../../assets/images/icon-logo.svg';
 import Language from './language';
 import UserMenu from './userMenu';
@@ -12,7 +12,7 @@ const Header = () => {
   const [rightSidebar, setRightSidebar] = useState(true);
   const [headerbar, setHeaderbar] = useState(true);
 
- const openCloseSidebar = () => {
+  const openCloseSidebar = () => {
     if (sidebar) {
       setSidebar(!sidebar)
       document.querySelector(".page-main-header").classList.remove('open');
@@ -20,7 +20,7 @@ const Header = () => {
     } else {
       setSidebar(!sidebar)
       document.querySelector(".page-main-header").classList.add('open');
-      document.querySelector(".page-sidebar").classList.add('open'); 
+      document.querySelector(".page-sidebar").classList.add('open');
     }
   }
 
@@ -59,7 +59,7 @@ const Header = () => {
   return (
     <Fragment>
       <div className="page-main-header">
-        <div className="main-header-right row" style={{backgroundColor: "black"}}>
+        <div className="main-header-right row" style={{ backgroundColor: "black" }}>
           <div className="main-header-left d-lg-none col-auto">
             <div className="logo-wrapper">
               <Link to={`${process.env.PUBLIC_URL}/dashboard/default`}>
@@ -85,9 +85,11 @@ const Header = () => {
                   <Maximize />
                 </a>
               </li>
-              <li className="onhover-dropdown">
+              {
+                /*<li className="onhover-dropdown">
                 <Language />
-              </li>
+              </li>*/
+              }
               <li className="onhover-dropdown">
                 <Notification />
                 <Bell />
@@ -102,7 +104,7 @@ const Header = () => {
               </li>
               <UserMenu />
             </ul>
-            <div className="d-lg-none mobile-toggle pull-right" onClick={() => setHeaderbar(!headerbar)}><MoreHorizontal/></div>
+            <div className="d-lg-none mobile-toggle pull-right" onClick={() => setHeaderbar(!headerbar)}><MoreHorizontal /></div>
           </div>
           <script id="result-template" type="text/x-handlebars-template">
             <div className="ProfileCard u-cf">
